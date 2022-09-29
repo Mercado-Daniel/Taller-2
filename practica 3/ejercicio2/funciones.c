@@ -4,7 +4,6 @@ Polinomio *creaPolinomio(int orden){
     Polinomio *p;
     int i;
      p = (Polinomio*)malloc(sizeof(Polinomio));
-     
      p->n = orden;
      p->coeficiente = (double*)malloc((orden + 1)*sizeof(double));
      for(i = 0; i <= orden; i++){
@@ -12,3 +11,4 @@ Polinomio *creaPolinomio(int orden){
      }
      return p;
 }
+
