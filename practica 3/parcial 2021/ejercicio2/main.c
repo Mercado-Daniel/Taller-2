@@ -15,5 +15,6 @@ int main(void){
     printf("\n");
     mat = expandir(mat, filas, columnas);
     mostraM(mat, filas + 1, columnas + 1);
+    liberarM(mat, filas + 1, columnas + 1);
 
 }

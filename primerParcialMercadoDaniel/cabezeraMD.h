@@ -12,6 +12,6 @@ typedef struct{
 
 void asignarEstado(Proceso *scheduling);
 void ingresaProceso(Proceso *scheduling[]);
-int terminaProceso(Proceso *scheduling[], int posicion);
+void terminaProceso(Proceso *scheduling[], int posicion);
 void recorrerCola(Proceso *scheduling[]);
 void mostrarScheduler(Proceso *scheduling[]);

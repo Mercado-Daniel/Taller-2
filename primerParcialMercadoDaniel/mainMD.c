@@ -7,8 +7,7 @@ int main(void){
     for(i = 0; i < 10; i++){
         scheduling[i] = NULL;
     }
-    for(i = 0; i < 4; i++){
-        printf("%d \n", i);
+    for(i = 0; i < 6; i++){
         ingresaProceso(scheduling);
         ingresaProceso(scheduling);
         ingresaProceso(scheduling);
@@ -24,8 +23,6 @@ int main(void){
         recorrerCola(scheduling);
         mostrarScheduler(scheduling);
         printf("\n");
-        recorrerCola(scheduling);
-        mostrarScheduler(scheduling);
     }
         
 

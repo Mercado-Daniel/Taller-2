@@ -4,7 +4,7 @@ void asignarEstado(Proceso *scheduling){
     if(strcmp(scheduling->estado, "Nuevo") == 0){
         strcpy(scheduling->estado, "Listo");
     } 
-    if(strcmp(scheduling->estado, "Listo") == 0 && scheduling->procesador != 0){
+    if((strcmp(scheduling->estado, "Listo") == 0) && (scheduling->procesador != 0)){
         strcpy(scheduling->estado, "Corriendo");
     }else if(strcmp(scheduling->estado, "Corriendo") == 0){
         strcpy(scheduling->estado, "Terminado");
@@ -29,30 +29,30 @@ void ingresaProceso(Proceso *scheduling[]){
     }
 
 }
-int terminaProceso(Proceso *scheduling[], int posicion ){
+void terminaProceso(Proceso *scheduling[], int posicion ){
     free(scheduling[posicion]);       
     scheduling[posicion] = NULL;
-    return posicion;
  
 }
 void recorrerCola(Proceso *scheduling[]){
-    int i, proces, fin, prior;
+    int i, proces, prior;
     proces = 0;
     for(i = 0; i < 10; i++){
         if(scheduling[i] != NULL){
             if(strcmp(scheduling[i]->estado, "Terminado") == 0){
-                prior = scheduling[i]->prioridad + 1;
-                fin = terminaProceso(scheduling, i);
+                prior = scheduling[i]->prioridad ;
+                terminaProceso(scheduling, i);
             }
+            
         }
     }
     
     for(i = 0; i < 10; i++){
         if(scheduling[i] != NULL){
-            if(proces < 2 && ((scheduling[i]->prioridad == prior) || (scheduling[i]->prioridad == prior+1))){
+            if((proces < 2 && (scheduling[i]->prioridad == prior+1 )) ||( proces < 2 && (scheduling[i]->prioridad == prior+2))){
                 scheduling[i]->procesador = proces + 1;
                 proces++;
-            }else if(proces < 2){
+            }else if((proces < 2 && (scheduling[i]->prioridad == 1)) || (proces < 2 && (scheduling[i]->prioridad == 2))){
                 scheduling[i]->procesador = proces + 1;
                 proces++;
             }
@@ -60,6 +60,7 @@ void recorrerCola(Proceso *scheduling[]){
            
         }
     }
+    
     
 }
 

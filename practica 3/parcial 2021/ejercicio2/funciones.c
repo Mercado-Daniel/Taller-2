@@ -54,3 +54,11 @@ int **expandir(int **matriz, int filas, int columnas){
 
     return matriz;
 }
+
+void liberarM(int **mat, int filas, int columnas){
+    int i;
+    for(i = 0; i < filas; i++){
+        free(*(mat + i));
+    }
+    free(mat);
+}

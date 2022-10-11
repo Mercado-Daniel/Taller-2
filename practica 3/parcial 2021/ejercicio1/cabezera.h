@@ -2,5 +2,9 @@
 #include<stdlib.h>
 
 typedef struct {
-    int ip;
-};
+    char *ip;
+    char *mask;
+}Red;
+
+
+char numeroDeRed(Red *direccion);
