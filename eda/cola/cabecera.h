@@ -7,9 +7,9 @@ typedef struct nodo{
 }cola;
 
 void enCola(cola **, cola **, int);
-int desenCola(cola **, cola **);/*
-void vaciaCola(cola **);
+int desenCola(cola **, cola **);
+void vaciaCola(cola **, cola**);
 int tamanio(cola *);
 int estaVacia(cola **);
-int frente(cola *);*/
+int frente(cola *);
 void mostrarCola(cola *, cola *);
