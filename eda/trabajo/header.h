@@ -8,7 +8,7 @@ typedef struct nodo{
     struct nodo *sgte;
 }politico;
 
-void elegirLIsta(char,char [],politico **,politico **);
+void elegirLista(char,char [],politico **,politico **);
 void insertar(char[], politico **);
 void suprimir(char[], politico **);
 int miembro(char[], politico *);

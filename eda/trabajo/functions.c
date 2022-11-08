@@ -4,17 +4,17 @@ void insertar(char nombre[], politico **lista){
     if(*lista == NULL){
         *lista = (politico*)malloc(sizeof(politico));
         strcpy((*lista)->nombre, nombre);
-        printf("Se agrego %s a la lista\n", (*lista)->nombre);
+        /*printf("Se agrego %s a la lista\n", (*lista)->nombre);*/
     }else{
-        /*if(miembro(nombre, *lista)){
-            printf("%s ya se encuentra en la lista.\n", nombre);
-        }else */
+        if(miembro(nombre, *lista)){
+            printf("%s se mantiene en su lista.\n", nombre);
+        }else 
         if((*lista)->sgte != NULL){
             politico *nuevo = (politico*)malloc(sizeof(politico));
             strcpy(nuevo->nombre, nombre);
             nuevo->sgte = (*lista)->sgte;
             (*lista)->sgte = nuevo;
-            printf("Se agrego %s a la lista\n", nuevo->nombre);
+            /*printf("Se agrego %s a la lista\n", nuevo->nombre);*/
         }else{//utiliso recursividad para recorer la lista
             insertar(nombre, &(*lista)->sgte);
         }
@@ -65,26 +65,24 @@ int miembro(char nombre[], politico *lista){
     return 0;  
 }
 
-void elegirLIsta(char voto,char nombre[],politico **buenos,politico **malos){
+void elegirLista(char voto,char nombre[],politico **buenos,politico **malos){
     if(voto == 'f'){
-        if(miembro(nombre, *malos) && miembro(nombre, *buenos) == 0){
+        if(miembro(nombre, *malos)){
             suprimir(nombre, malos);
             insertar(nombre, buenos);
-        }else if(miembro(nombre, *buenos)){
-            printf("%s se matiene en los chicos buenos\n", nombre);
+            printf("%s se pasa a la los Chicos Buenos\n", nombre);
         }else {
-            printf("2");
             insertar(nombre, buenos);
+            printf("%s se une a los Chicos Buenos\n", nombre);
         }
     }else if(voto == 'd'){
-        if( miembro(nombre, *buenos) && miembro(nombre, *malos) == 0){
+        if( miembro(nombre, *buenos)){
             suprimir(nombre, buenos);
             insertar(nombre, malos);
-        }else if(miembro(nombre, *malos)){
-            printf("%s se matiene en los chicos buenos\n", nombre);
+            printf("%s se pasa a la los Chicos Malos\n", nombre);
         }else{
-            printf("4");
             insertar(nombre, malos);
+            printf("%s se une a los Chicos Malos\n", nombre);
         }
     }else{
     }
