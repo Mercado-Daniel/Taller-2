@@ -3,7 +3,6 @@
 #include<string.h>
 
 typedef struct nodo{
-    char voto;
     char nombre[10];
     struct nodo *sgte;
 }politico;

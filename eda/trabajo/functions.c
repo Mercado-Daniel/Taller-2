@@ -4,6 +4,7 @@ void insertar(char nombre[], politico **lista){
     if(*lista == NULL){
         *lista = (politico*)malloc(sizeof(politico));
         strcpy((*lista)->nombre, nombre);
+        (*lista)->sgte = NULL;
         /*printf("Se agrego %s a la lista\n", (*lista)->nombre);*/
     }else{
         if(miembro(nombre, *lista)){
@@ -70,7 +71,7 @@ void elegirLista(char voto,char nombre[],politico **buenos,politico **malos){
         if(miembro(nombre, *malos)){
             suprimir(nombre, malos);
             insertar(nombre, buenos);
-            printf("%s se pasa a la los Chicos Buenos\n", nombre);
+            printf("%s se pasa a los Chicos Buenos\n", nombre);
         }else {
             insertar(nombre, buenos);
             printf("%s se une a los Chicos Buenos\n", nombre);
@@ -79,12 +80,13 @@ void elegirLista(char voto,char nombre[],politico **buenos,politico **malos){
         if( miembro(nombre, *buenos)){
             suprimir(nombre, buenos);
             insertar(nombre, malos);
-            printf("%s se pasa a la los Chicos Malos\n", nombre);
+            printf("%s se pasa a los Chicos Malos\n", nombre);
         }else{
             insertar(nombre, malos);
             printf("%s se une a los Chicos Malos\n", nombre);
         }
-    }else{
+    }else if(voto == 'e'){
+        printf("%s se adstubo en la votacion", nombre);
     }
     
 }
