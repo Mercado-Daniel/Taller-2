@@ -1,4 +1,4 @@
-#include "cabezera.h"
+#include "cabecera.h"
 
 int main(void){
     pila *cima;

@@ -1,4 +1,4 @@
-#include "cabezera.h"
+#include "cabecera.h"
 
 
 void apila(pila **p, int tam){
