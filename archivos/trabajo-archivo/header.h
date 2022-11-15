@@ -2,4 +2,4 @@
 #include<stdio.h>
 #include<string.h>
 
-int calcularPago(char, int, int);
+float* calcularPago(char*, int*, int*);
