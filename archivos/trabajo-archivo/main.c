@@ -16,14 +16,17 @@ int main(void){
         printf("No se pudo leer el archivo");
         exit(1);
     }
-    fscanf(pe, "%s %s %d %s %d %c", nombre, apellido, edad, sexo, meses, planPe);
     while (!feof(pe)){
         fscanf(pe, "%s %s %d %s %d %c", nombre, apellido, edad, sexo, meses, planPe);
         monto = calcularPago(planPe, meses, edad);
-        printf("%s %s %d %s %d %c %f\n", nombre, apellido, *edad, sexo, *meses, *planPe, *monto);
-        fprintf(d, "%s %s %d %s %d %c %f\n", nombre, apellido, *edad, sexo, *meses, *planPe, *monto);
+        printf("%s %s %d %s %d %c %.2f\n", nombre, apellido, *edad, sexo, *meses, *planPe, *monto);
+        fprintf(d, "%s %s %d %s %d %c %.2f\n", nombre, apellido, *edad, sexo, *meses, *planPe, *monto);
     }
     fclose(pe);
     fclose(d);
+    free(edad);
+    free(meses);
+    free(planPe);
+    free(monto);
     return 0;
 }

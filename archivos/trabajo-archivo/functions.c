@@ -6,8 +6,11 @@ float* calcularPago(char *planPe, int *meses, int *edad){
     char *planPl = (char*)malloc(sizeof(char));
     int *montoPl = (int*)malloc(sizeof(int));
     float *monto = (float*)malloc(sizeof(float));
-    while(*planPl != *planPe || !feof(pl)){
+    while(*planPl != *planPe){
         fscanf(pl, "%c %d", planPl, montoPl);
+        if(!feof(pl)){
+            break;
+        }
     }
     if(*edad > 65 || *edad < 12){
         if(*meses > 24){
@@ -22,5 +25,6 @@ float* calcularPago(char *planPe, int *meses, int *edad){
             *monto = *montoPl;
         }
     }
+
     return monto;
 }

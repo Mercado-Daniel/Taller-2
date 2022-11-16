@@ -1,0 +1,11 @@
+Daniel Mercado 28 masculino 36 a 825.00
+Alejandro Mercado 28 masculino 16 b 1500.00
+Azul Gonzalez 26 femenino 22 a 1500.00
+Hecto Suarez 29 masculino 12 b 1500.00
+Adrian Ibarra 11 masculino 12 c 1425.00
+Nahuel Aguirre 6 masculino 24 a 1425.00
+Estefania Juarez 29 femenino 32 a 825.00
+Yair Ibarra 9 masculino 15 b 1425.00
+Osvaldo Mercado 65 masculino 26 b 825.00
+Dolores Cornaló 63 femenino 12 a 1500.00
+Dolores Cornaló 63 femenino 12 a 1500.00

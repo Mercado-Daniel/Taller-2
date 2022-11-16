@@ -1,11 +1,11 @@
 Daniel Mercado 28 masculino 36 a 
 Alejandro Mercado 28 masculino 16 b 
-Azul Gonzale 26 femenino 22 a 
+Azul Gonzalez 26 femenino 22 a 
 Hecto Suarez 29 masculino 12 b 
 Adrian Ibarra 11 masculino 12 c 
 Nahuel Aguirre 6 masculino 24 a 
 Estefania Juarez 29 femenino 32 a 
-Yai Ibarra 9 masculino 15 b 
-Osvald Mercado 65 masculino 26  
-Dolore Cornaló 6 femenino 12 a 
+Yair Ibarra 9 masculino 15 b 
+Osvaldo Mercado 65 masculino 26 b 
+Dolores Cornaló 63 femenino 12 a 
 
