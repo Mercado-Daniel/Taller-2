@@ -8,7 +8,7 @@ float* calcularPago(char *planPe, int *meses, int *edad){
     float *monto = (float*)malloc(sizeof(float));
     while(*planPl != *planPe){
         fscanf(pl, "%c %d", planPl, montoPl);
-        if(!feof(pl)){
+        if(feof(pl)){
             break;
         }
     }
