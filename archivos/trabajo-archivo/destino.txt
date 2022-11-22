@@ -8,4 +8,3 @@ Estefania Juarez 29 femenino 32 a 825.00
 Yair Ibarra 9 masculino 15 b 1425.00
 Osvaldo Mercado 65 masculino 26 b 825.00
 Dolores Cornaló 63 femenino 12 a 1500.00
-Dolores Cornaló 63 femenino 12 a 1500.00
