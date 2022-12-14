@@ -93,9 +93,8 @@ int encuentra(Subconjunto sub[], int vertice){//recibe el subconjunto y el verti
     return sub[vertice].raiz;//entonces retornamos la raiz que es igual al vertice recibido
 }
 
-void unir(Subconjunto sub[], int x, int y){
-    int raizx = encuentra(sub, x);//los vertices recibidos distintos son evaluados nuevamente
-    int raizy = encuentra(sub, y);
+void unir(Subconjunto sub[], int raizx, int raizy){
+    
 
     if(sub[raizx].altura < sub[raizy].altura){//si x tine menos altura que y
         sub[raizx].raiz = raizy;//entonces y se vuelve raiz de x;
