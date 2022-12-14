@@ -2,8 +2,6 @@
 
 void inserta(int i , int j , int costo, Grafo **lista){//vamos a usar una lista enlazada para almacenar los datos de la matriz de costos
     
-   
-
     if(*lista == NULL){
         *lista = (Grafo*)malloc(sizeof(Grafo));
          assert(lista != NULL);
@@ -47,9 +45,9 @@ void mostrar(Grafo *lista){
 }
 
 void kruskal(Grafo **lista){//recibo una lista ordenada
-    int e = 0;//e es el indice de subconjuntos
-    int i, v;//ve se usa para asignar raiz a los subconjuntos
-    int r = 0;//r suma el costo del arbol reducido
+    int j = 0;//j es el indice de resultado
+    int i, v;//v se usa para asignar vertice raiz a los subconjuntos
+    int sumaCosto = 0;//s suma el costo del arbol reducido
     Arista *resultado = (Arista*)malloc((VERTICES) * sizeof(Arista));//genero un array que almacenara las aristas del arbol reducido
      assert(resultado != NULL);
     Subconjunto *sub = (Subconjunto*)malloc(VERTICES * sizeof(Subconjunto));//genero un array de subconjuntos
@@ -63,29 +61,30 @@ void kruskal(Grafo **lista){//recibo una lista ordenada
 
   
 
-    while(e < VERTICES -1){//limito la cantidada de arista del arbol resultante y filtro el arbol original
+    while(j < VERTICES -1){//limito la cantidada de arista del arbol resultante y filtro el arbol original
         Arista *ari = p->a;
         int x = encuentra(sub, ari->verticeU);//envio el subconjunto y el vertice a encuentra
         int y = encuentra(sub, ari->verticeV);
         if(x != y){//si los vertices son distintos
-            resultado[e++] = *ari;//guardamos el resultado
-            unir(sub, x, y);//los unimos  
+            resultado[j] = *ari;//guardamos el resultado
+            unir(sub, x, y);//los unimos 
+            j++; 
         }
         p = p->sig;//recorro la lista
     }
 
-    for(i = 0; i < e; i++){
+    for(i = 0; i < j; i++){
         printf("{ U: %d, V: %d, Costo: %d}\n", resultado[i].verticeU, resultado[i].verticeV, resultado[i].costo);
-        r += resultado[i].costo;
+        sumaCosto += resultado[i].costo;
     }
 
-    printf("\nCosto total = %d\n", r);
+    printf("\nCosto total = %d\n", sumaCosto);
 
     free(sub);
     free(resultado);
 }
 
-int encuentra(Subconjunto sub[], int vertice){//recibe el subconjunto y el vertice que sera raiz de ese subconjunto
+int encuentra(Subconjunto *sub, int vertice){//recibe el subconjunto y el vertice que sera raiz de ese subconjunto
     if(sub[vertice].raiz != vertice){ //si la raiz del subconjunto no corresponde con el vertice recibido
         sub[vertice].raiz = encuentra(sub, sub[vertice].raiz);//evaluo con encuentra la raiz usando recursividad hasta que el vertice sea igual a la raiz
 
@@ -93,8 +92,7 @@ int encuentra(Subconjunto sub[], int vertice){//recibe el subconjunto y el verti
     return sub[vertice].raiz;//entonces retornamos la raiz que es igual al vertice recibido
 }
 
-void unir(Subconjunto sub[], int raizx, int raizy){
-    
+void unir(Subconjunto *sub, int raizx, int raizy){
 
     if(sub[raizx].altura < sub[raizy].altura){//si x tine menos altura que y
         sub[raizx].raiz = raizy;//entonces y se vuelve raiz de x;

@@ -25,6 +25,6 @@ typedef struct subconjunto{
 void inserta(int , int , int, Grafo** );
 void mostrar(Grafo*);
 Arista* creaArista(int, int, int);
-int encuentra(Subconjunto[], int ); 
-void unir(Subconjunto[], int, int);
+int encuentra(Subconjunto*, int ); 
+void unir(Subconjunto*, int, int);
 void kruskal(Grafo**);
